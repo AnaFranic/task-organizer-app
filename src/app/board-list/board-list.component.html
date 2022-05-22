@@ -1,0 +1,15 @@
+<ul class="board-list">
+  <h2>All boards</h2>
+  <div class="boards" *ngFor="let board of boards">
+    <a routerLink="/boards/{{board.id}}" (click)="closeDialog()">
+      <div class="board-name">
+        {{ board.name }}
+      </div>
+    </a>
+    <button mat-icon-button (click)="editBoard(board)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </div>
+  <p></p>
+  <button mat-raised-button color="primary" (click)="createBoard()">Create new board</button>
+</ul>
