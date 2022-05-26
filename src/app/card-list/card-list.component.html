@@ -1,0 +1,16 @@
+<mat-card class="card-list" *ngIf="cardList">
+  <mat-card-header>
+    <mat-card-title>{{ cardList?.name }}</mat-card-title>
+    <button mat-icon-button *ngIf="boardId" (click)="editCardList(boardId, cardList)">
+      <mat-icon>edit</mat-icon>
+    </button>
+  </mat-card-header>
+  <mat-card-content>
+    <p>
+      Cards from card list
+    </p>
+  </mat-card-content>
+  <mat-card-actions>
+    <button mat-raised-button color="primary">Create new card</button>
+  </mat-card-actions>
+</mat-card>

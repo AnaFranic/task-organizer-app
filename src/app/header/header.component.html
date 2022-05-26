@@ -2,7 +2,19 @@
   <div class="btn">
     <button mat-raised-button color="primary" (click)="openDialog()">Boards</button>
   </div>
-  <div class="spacer"></div>
+  <div class="spacer">
+    <!-- testing card list http requests -->
+    <button mat-raised-button (click)="createCardList()">Create card list</button>
+    <button mat-raised-button (click)="updateCardList()">Update card list</button>
+    <button mat-raised-button (click)="deleteCardList()">Delete card list</button>
+    <button mat-raised-button (click)="getCardList()">Get card list</button>
+  </div>
   <div class="title">Task Organizer</div>
-  <div class="spacer"></div>
+  <div class="spacer">
+    <!-- testing card http requests -->
+    <button mat-raised-button (click)="createCard()">Create card</button>
+    <button mat-raised-button (click)="updateCard()">Update card</button>
+    <button mat-raised-button (click)="deleteCard()">Delete card</button>
+    <button mat-raised-button (click)="getCard()">Get card</button>
+  </div>
 </div>

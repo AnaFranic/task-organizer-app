@@ -1,0 +1,16 @@
+<h1 mat-dialog-title>{{ dialogData.cardList == null ? 'New' : 'Edit' }} card list</h1>
+<div mat-dialog-content [formGroup]="form">
+  <mat-form-field appearance="standard">
+    <mat-label>Name</mat-label>
+    <input matInput type="text" formControlName="name">
+    <mat-error *ngIf="form.controls['name'].errors?.['required']">Required</mat-error>
+  </mat-form-field>
+</div>
+<div mat-dialog-actions>
+  <button class="btn-delete-card-list" mat-raised-button *ngIf="dialogData.cardList?.id"
+    (click)="deleteCardList(dialogData.cardList?.id)">
+    <mat-icon>delete</mat-icon>
+  </button>
+  <button mat-raised-button (click)="closeDialog()">Cancel</button>
+  <button mat-raised-button color="primary" [disabled]="!form.valid || form.pristine" (click)="save()">Save</button>
+</div>

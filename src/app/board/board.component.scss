@@ -2,3 +2,14 @@
   display: block;
   flex-grow: 1;
 }
+
+.board {
+  .name {
+    display: flex;
+    align-items: center;
+    flex-direction: column;
+    padding-top: 8px;
+    font-size: 32px;
+    line-height: normal;
+  }
+}

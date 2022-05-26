@@ -16,6 +16,9 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { MatFormFieldModule } from '@angular/material/form-field';
 import { MatInputModule } from '@angular/material/input';
 import { MatIconModule } from '@angular/material/icon';
+import { CardListComponent } from './card-list/card-list.component';
+import { EditCardListComponent } from './edit-card-list/edit-card-list.component';
+import { MatCardModule } from '@angular/material/card';
 
 @NgModule({
   declarations: [
@@ -24,6 +27,8 @@ import { MatIconModule } from '@angular/material/icon';
     BoardListComponent,
     BoardComponent,
     EditBoardComponent,
+    CardListComponent,
+    EditCardListComponent,
   ],
   imports: [
     BrowserModule,
@@ -36,6 +41,7 @@ import { MatIconModule } from '@angular/material/icon';
     MatFormFieldModule,
     MatInputModule,
     MatIconModule,
+    MatCardModule,
   ],
   providers: [
     TaskService,

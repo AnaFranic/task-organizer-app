@@ -2,6 +2,8 @@ import { HttpClient } from '@angular/common/http';
 import { Injectable } from '@angular/core';
 import { Board } from '../models/board.models';
 import { Observable } from 'rxjs';
+import { CardList } from '../models/cardList.models';
+import { Card } from '../models/card.models';
 
 
 @Injectable({
@@ -34,5 +36,45 @@ export class TaskService {
   deleteBoard(id: number) {
     const deleteBoardUrl = `http://localhost:8080/api/task/deleteBoard?id=${id}`;
     return this.http.delete<void>(deleteBoardUrl);
+  }
+
+  getCardList(id: number): Observable<CardList | undefined> {
+    const cardListUrl = `http://localhost:8080/api/task/getCardList?id=${id}`;
+    return this.http.get<CardList>(cardListUrl);
+  }
+
+  createCardList(boardId: number, cardList: CardList): Observable<CardList | undefined> {
+    const createCardListUrl = `http://localhost:8080/api/task/createCardList?boardId=${boardId}`;
+    return this.http.post<CardList>(createCardListUrl, cardList);
+  }
+
+  updateCardList(boardId: number, cardList: CardList): Observable<CardList | undefined> {
+    const updateCardListUrl = `http://localhost:8080/api/task/updateCardList?boardId=${boardId}`;
+    return this.http.post<CardList>(updateCardListUrl, cardList);
+  }
+
+  deleteCardList(id: number) {
+    const deleteCardListUrl = `http://localhost:8080/api/task/deleteCardList?id=${id}`;
+    return this.http.delete<void>(deleteCardListUrl);
+  }
+
+  getCard(id: number): Observable<Card | undefined> {
+    const getCardUrl = `http://localhost:8080/api/task/getCard?id=${id}`;
+    return this.http.get<Card>(getCardUrl);
+  }
+
+  createCard(cardListId: number, card: Card): Observable<Card | undefined> {
+    const createCardUrl = `http://localhost:8080/api/task/createCard?cardListId=${cardListId}`;
+    return this.http.post<Card>(createCardUrl, card);
+  }
+
+  updateCard(cardListId: number, card: Card): Observable<Card | undefined> {
+    const updateCardUrl = `http://localhost:8080/api/task/updateCard?cardListId=${cardListId}`;
+    return this.http.post<Card>(updateCardUrl, card);
+  }
+
+  deleteCard(id: number) {
+    const deleteCardUrl = `http://localhost:8080/api/task/deleteCard?id=${id}`;
+    return this.http.delete<void>(deleteCardUrl);
   }
 }

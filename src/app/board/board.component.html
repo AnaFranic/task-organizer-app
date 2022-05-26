@@ -1,8 +1,9 @@
-<div *ngIf="board">
-  <div class="board-header">
-    <h1>{{ board.name }}</h1>
-  </div>
-  <div class="board-content">
-    <p>Board content</p>
+<div class="board" *ngIf="board">
+  <h1 class="name">{{ board.name }}</h1>
+  <button mat-raised-button color="primary" (click)="createCardList(board.id)">Create new card list</button>
+  <div *ngIf="board.cardLists" style="display: flex;">
+    <app-card-list *ngFor="let cardList of board.cardLists" [cardList]="cardList" [boardId]="board.id"
+      (refresh)="refresh()">
+    </app-card-list>
   </div>
 </div>
