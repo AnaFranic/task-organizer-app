@@ -19,6 +19,8 @@ import { MatIconModule } from '@angular/material/icon';
 import { CardListComponent } from './card-list/card-list.component';
 import { EditCardListComponent } from './edit-card-list/edit-card-list.component';
 import { MatCardModule } from '@angular/material/card';
+import { CardComponent } from './card/card.component';
+import { EditCardComponent } from './edit-card/edit-card.component';
 
 @NgModule({
   declarations: [
@@ -29,6 +31,8 @@ import { MatCardModule } from '@angular/material/card';
     EditBoardComponent,
     CardListComponent,
     EditCardListComponent,
+    CardComponent,
+    EditCardComponent,
   ],
   imports: [
     BrowserModule,

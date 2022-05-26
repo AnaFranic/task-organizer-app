@@ -38,11 +38,6 @@ export class TaskService {
     return this.http.delete<void>(deleteBoardUrl);
   }
 
-  getCardList(id: number): Observable<CardList | undefined> {
-    const cardListUrl = `http://localhost:8080/api/task/getCardList?id=${id}`;
-    return this.http.get<CardList>(cardListUrl);
-  }
-
   createCardList(boardId: number, cardList: CardList): Observable<CardList | undefined> {
     const createCardListUrl = `http://localhost:8080/api/task/createCardList?boardId=${boardId}`;
     return this.http.post<CardList>(createCardListUrl, cardList);
@@ -56,11 +51,6 @@ export class TaskService {
   deleteCardList(id: number) {
     const deleteCardListUrl = `http://localhost:8080/api/task/deleteCardList?id=${id}`;
     return this.http.delete<void>(deleteCardListUrl);
-  }
-
-  getCard(id: number): Observable<Card | undefined> {
-    const getCardUrl = `http://localhost:8080/api/task/getCard?id=${id}`;
-    return this.http.get<Card>(getCardUrl);
   }
 
   createCard(cardListId: number, card: Card): Observable<Card | undefined> {

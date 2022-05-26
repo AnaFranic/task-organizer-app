@@ -3,7 +3,7 @@
   <button mat-raised-button color="primary" (click)="createCardList(board.id)">Create new card list</button>
   <div *ngIf="board.cardLists" style="display: flex;">
     <app-card-list *ngFor="let cardList of board.cardLists" [cardList]="cardList" [boardId]="board.id"
-      (refresh)="refresh()">
+      (refresh)="getBoard(boardId)">
     </app-card-list>
   </div>
 </div>

@@ -16,7 +16,6 @@ import { EditCardListComponent } from '../edit-card-list/edit-card-list.componen
 })
 export class BoardComponent implements OnInit, OnDestroy {
   board?: Board;
-
   boardId: number = 0;
 
   private subscriptions = new Subscription();
@@ -43,7 +42,7 @@ export class BoardComponent implements OnInit, OnDestroy {
     this.subscriptions.unsubscribe();
   }
 
-  private getBoard(boardId: number): void {
+  getBoard(boardId: number): void {
     this.subscriptions.add(
       this.taskService.getBoard(boardId).subscribe((board) => {
         this.board = board;
@@ -67,9 +66,5 @@ export class BoardComponent implements OnInit, OnDestroy {
         this.getBoard(boardId);
       })
     );
-  }
-
-  refresh() {
-    this.getBoard(this.boardId);
   }
 }
