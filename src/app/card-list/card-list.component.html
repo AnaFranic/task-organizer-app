@@ -1,9 +1,11 @@
 <mat-card class="card-list" *ngIf="cardList">
   <mat-card-header>
-    <mat-card-title>{{ cardList?.name }}</mat-card-title>
-    <button mat-icon-button *ngIf="boardId" (click)="editCardList(boardId, cardList)">
-      <mat-icon>edit</mat-icon>
-    </button>
+    <mat-card-title>
+      {{ cardList?.name }}
+      <button mat-icon-button *ngIf="boardId" (click)="editCardList(boardId, cardList)">
+        <mat-icon>edit</mat-icon>
+      </button>
+    </mat-card-title>
   </mat-card-header>
   <mat-card-content>
     <app-card *ngFor="let card of cardList.cards" [card]="card" [cardListId]="cardList.id" (refresh)="refresh.emit()">

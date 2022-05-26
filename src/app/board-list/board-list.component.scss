@@ -1,3 +1,8 @@
+:host {
+  display: block;
+  width: 300px;
+}
+
 ul{
   margin: 0;
   padding: 0;
@@ -10,4 +15,9 @@ ul{
 .boards{
   display:flex;
   align-items: center;
+
+  a{
+    text-decoration: none;
+    color: initial;
+  }
 }
